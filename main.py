@@ -9,15 +9,15 @@ def calculadora(num1: float, num2: float, operador: str) -> float:
     """
     
     result = float("nan")
-    if operador == "+":
+    if operador == "+" and "soma":
         result = num1 + num2
-    elif operador == "-":
+    elif operador == "-" and "subtração":
         result = num1 - num2
-    elif operador == "/":
+    elif operador == "/" and "divisão":
         result = num1 / num2
-    elif operador == "*":
+    elif operador == "*" and "multiplicação":
         result = num1 * num2
-    elif operador == "^":
+    elif operador == "^" and "exponenciação":
         result = num1 ** num2
     
     return result
@@ -31,8 +31,13 @@ if __name__ == "__main__":
             print('Calculadora')
             print('----------------------------------\n')
             
-
-
+            num1 = float(input("Digite o primeiro número: "))
+            num2 = float(input("Digite o segundo número: "))
+            operador = input("As operações disponíveis são: soma(+), subtração(-), divisão(/), multiplicação(*) e exponenciação(^) ")
+            
+            resultado = calculadora(num1, num2, operador)
+            print(f"Resultado: {num1} {operador} {num2} = {resultado}")
+            
         except ValueError:
             print('Dados inválidos! -> Tente novamente!')
             time.sleep(2)
