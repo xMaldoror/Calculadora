@@ -7,10 +7,19 @@ def calculadora(num1: float, num2: float, operador: str) -> float:
     Se o operador fornecido não corresponder a nenhuma das opções válidas (+, -, etc.), a função retornará nan, 
     sinalizando que o cálculo não pôde ser realizado.
     """
+    
     result = float("nan")
-    if operador == '+':
+    if operador == "+":
         result = num1 + num2
-
+    elif operador == "-":
+        result = num1 - num2
+    elif operador == "/":
+        result = num1 / num2
+    elif operador == "*":
+        result = num1 * num2
+    elif operador == "^":
+        result = num1 ** num2
+    
     return result
 
 
@@ -21,6 +30,7 @@ if __name__ == "__main__":
         try:
             print('Calculadora')
             print('----------------------------------\n')
+            
 
 
         except ValueError:
